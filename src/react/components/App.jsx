@@ -1,17 +1,17 @@
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
-import Main from './Main';
-import Practice from './Practice';
-import Property from './Property';
-import ProbateWills from './ProbateWills';
-import Corporate from './Corporate';
-import Litigation from './Litigation';
-import About from './About';
-import Demidov from './Demidov';
-import Pavlov from './Pavlov';
-import Vorontsova from './Vorontsova';
-import SocialResponsibility from './SocialResponsibility';
-import Careers from './Careers';
+import Main from './pages/Main';
+import Practice from './pages/Practice';
+import Property from './pages/Property';
+import ProbateWills from './pages/ProbateWills';
+import Corporate from './pages/Corporate';
+import Litigation from './pages/Litigation';
+import About from './pages/About';
+import Demidov from './pages/Demidov';
+import Pavlov from './pages/Pavlov';
+import Vorontsova from './pages/Vorontsova';
+import SocialResponsibility from './pages/SocialResponsibility';
+import Careers from './pages/Careers';
 import '../../style/style.scss';
 
 export default function App() {

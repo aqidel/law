@@ -12,15 +12,28 @@ main {
 }
 
 #homepage-bg-outer {
+  position: relative;
   background-image: linear-gradient(170deg, #1f2d3d 0%,#406080 80%);
 }
 
-#homepage-bg-inner {
-  height: 800px;
+#homepage-bg-inner::before {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
   background-image: url('../img/home/contract.webp');
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
   opacity: 0.2;
-  content: "";
+  content: '';
+}
+
+#homepage-bg-inner > p {
+  margin: 0;
+  font-family: Source Serif Pro, sans-serif;
+  font-size: 42px;
+  line-height: 55px;
+  color: #f5f8fa;
 }

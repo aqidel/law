@@ -6,6 +6,7 @@ import Property from './pages/Property';
 import ProbateWills from './pages/ProbateWills';
 import Corporate from './pages/Corporate';
 import Litigation from './pages/Litigation';
+import Immigration from './pages/Immigration';
 import About from './pages/About';
 import Demidov from './pages/Demidov';
 import Pavlov from './pages/Pavlov';
@@ -25,6 +26,7 @@ export default function App() {
         <Route path='/probate-wills' element={<ProbateWills/>}/>
         <Route path='/corporate' element={<Corporate/>}/>
         <Route path='/litigation' element={<Litigation/>}/>
+        <Route path='/immigration' element={<Immigration/>} />
         <Route path='/about' element={<About/>}/>
         <Route path='/about/demidov' element={<Demidov/>}/>
         <Route path='/about/pavlov' element={<Pavlov/>}/>

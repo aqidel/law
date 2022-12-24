@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import Form from '../Form';
 import legal500_2020 from '../../../img/home/awards/legal500-firm2020.webp';
 import legal500_rl_2020 from '../../../img/home/awards/legal500-recomended-lawyer-2020.webp';
 import step_lawyer from '../../../img/home/awards/step-lawyer.webp';
@@ -42,7 +43,8 @@ export default function Main() {
         </div>
         <div id='home-contact-wrap'>
           <h2>Свяжитесь с нами сегодня</h2>
-          <p>Сообщите, с чем вам нужна помощь, и наш юрист свяжется с вами.</p>
+          <p>Задайте свой вопрос и наш юрист свяжется с вами.</p>
+          <Form/>
         </div>
       </div>
     </main>

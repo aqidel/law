@@ -122,8 +122,12 @@ main {
   text-align: center;
 }
 
-.input-wrap, .textarea-wrap {
+.input-wrap-outer, .textarea-wrap {
   margin-bottom: 20px;
+}
+
+.input-wrap-inner, .input-wrap-inner-active, .input-wrap-inner-error {
+  position: relative;
 }
 
 .input {
@@ -142,31 +146,73 @@ main {
   color: #888;
 }
 
-.input-error {
-  border-bottom: 2px solid #e04562;
-  padding: 10px 0 8px;
+.input-wrap-inner::after {
+  display: block;
+  position: absolute;
+  bottom: 0;
+  content: '';
 }
 
-.textarea {
+.input-wrap-inner:hover::after, .input-wrap-inner-active::after, .input-wrap-inner-error::after {
+  display: block;
+  position: absolute;
+  bottom: 0;
+  height: 2px;
+  content: '';
+  animation-name: input-animation;
+  animation-duration: .2s;
+  animation-timing-function: linear;
+  animation-fill-mode: forwards;
+}
+
+.input-wrap-inner:hover::after, .input-wrap-inner-active::after {
+  background-color: #17a8e3;
+}
+
+.input-wrap-inner-error::after {
+  background-color: #e04562;
+}
+
+@keyframes input-animation {
+  from {
+    left: 50%;
+    right: 50%;
+  }
+
+  to {
+    left: 0;
+    right: 0;
+  }
+}
+
+.textarea, .textarea-active, .textarea-error {
   width: 100%;
   height: 120px;
   border: 1px solid #777771;
   box-sizing: border-box;
-  padding: 29px 9px 9px;
   outline: none;
   resize: none;
 }
 
-.textarea::placeholder {
-  font-family: Source Serif Pro, sans-serif;
-  font-size: 16px;
-  line-height: 20px;
-  color: #888;
+.textarea {
+  padding: 29px 9px 9px;
+}
+
+.textarea:hover, .textarea-active {
+  border: 2px solid #17a8e3;
+  padding: 28px 8px 8px;
 }
 
 .textarea-error {
   border: 2px solid #e04562;
   padding: 28px 8px 8px;
+}
+
+.textarea::placeholder, .textarea-active::placeholder, .textarea-error::placeholder {
+  font-family: Source Serif Pro, sans-serif;
+  font-size: 16px;
+  line-height: 20px;
+  color: #888;
 }
 
 .textarea-wrap > span {
@@ -179,7 +225,7 @@ main {
   text-align: end;
 }
 
-.input-wrap > small, .textarea-wrap > small {
+.input-wrap-outer > small, .textarea-wrap > small {
   margin-top: 5px;
   font-family: Source Serif Pro, sans-serif;
   font-size: 12px;
@@ -195,4 +241,9 @@ main {
   font-family: Source Serif Pro, sans-serif;
   font-size: 14px;
   color: #ffffff;
+  cursor: pointer;
+}
+
+#submit-btn:hover {
+  background-color: #008fca;
 }

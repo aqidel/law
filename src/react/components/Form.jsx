@@ -12,7 +12,40 @@ export default function Form() {
   const [phone_state, setPhoneState] = useState(0);
   const [message_state, setMessageState] = useState(0);
 
-  function validation(e) {}
+  function validation(e) {
+    e.preventDefault();
+
+    if (e.target[0].value == '') {
+      setNameState(-1);
+    } else if (e.target[0].value.length > 50) {
+      setNameState(-2);
+    }
+
+    if (e.target[1].value == '') {
+      setEmailState(-1);
+    } else if (e.target[1].value.match(/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/g) == null) {
+      setEmailState(-2);
+    }
+
+    if (e.target[2].value.match(/^\+\d+$/g) == null) {
+      setPhoneState(-2);
+    }
+
+    if (e.target[3].value == '') {
+      setMessageState(-1);
+    } else if (e.target[3].value.length > 180) {
+      setMessageState(-2);
+    }
+
+    else {
+      setNameState(0);
+      setEmailState(0);
+      setPhoneState(0);
+      setMessageState(0);
+      e.target.reset();
+      sendEmail();
+    }
+  }
 
   function sendEmail() {
     emailjs.sendForm(YOUR_SERVICE_ID, YOUR_TEMPLATE_ID, form.current, YOUR_PUBLIC_KEY);
@@ -21,7 +54,7 @@ export default function Form() {
   return (
     <form ref={form} onSubmit={validation}>
       <div className='input-wrap-outer'>
-        <div className={name_state == -1 ? 'input-wrap-inner-error' : name_state == 1 ? 'input-wrap-inner-active' : 'input-wrap-inner'}>
+        <div className={name_state == 0 ? 'input-wrap-inner' : name_state < 0 ? 'input-wrap-inner-error' : 'input-wrap-inner-active'}>
           <input 
             className='input'
             type='text' 
@@ -33,7 +66,7 @@ export default function Form() {
         {<small>Поле должно быть заполнено!</small>}
       </div>
       <div className='input-wrap-outer'>
-        <div className={email_state == -1 ? 'input-wrap-inner-error' : email_state == 1 ? 'input-wrap-inner-active' : 'input-wrap-inner'}>
+        <div className={email_state == 0 ? 'input-wrap-inner' : email_state < 0 ? 'input-wrap-inner-error' : 'input-wrap-inner-active'}>
           <input 
             className='input'
             type='email' 
@@ -45,19 +78,20 @@ export default function Form() {
         {<small>Поле должно быть заполнено!</small>}
       </div>
       <div className='input-wrap-outer'>
-        <div className={phone_state == -1 ? 'input-wrap-inner-error' : phone_state == 1 ? 'input-wrap-inner-active' : 'input-wrap-inner'}>
+        <div className={phone_state == 0 ? 'input-wrap-inner' : phone_state < 0 ? 'input-wrap-inner-error' : 'input-wrap-inner-active'}>
           <input 
             className='input'
             type='text' 
             name='phone' 
             placeholder='Телефон'
-            onFocus={(e) => setPhoneState(1)}/>
+            onFocus={(e) => setPhoneState(1)}
+            onBlur={(e) => setPhoneState(0)}/>
         </div>
         {<small>Неверный формат номера!</small>}
       </div>
       <div className='textarea-wrap'>
         <textarea
-          className={message_state == -1 ? 'textarea-error' : message_state == 1 ? 'textarea-active' : 'textarea'} 
+          className={message_state == 0 ? 'textarea' : message_state < 0 ? 'textarea-error' : 'textarea-active'} 
           name='message' 
           placeholder='Сообщение *'
           onFocus={(e) => setMessageState(1)}

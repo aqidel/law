@@ -151,6 +151,26 @@ main {
   position: absolute;
   bottom: 0;
   content: '';
+  animation-name: anim;
+  animation-duration: 4s;
+  animation-timing-function: linear;
+  animation-fill-mode: forwards;
+}
+
+@keyframes anim {
+  from {
+    left: 0;
+    right: 0;
+    height: 2px;
+    background-color: #17a8e3;
+  }
+
+  to {
+    left: 50%;
+    right: 50%;
+    height: 2px;
+    background-color: #17a8e3;
+  }
 }
 
 .input-wrap-inner:hover::after, .input-wrap-inner-active::after, .input-wrap-inner-error::after {
@@ -160,7 +180,7 @@ main {
   height: 2px;
   content: '';
   animation-name: input-animation;
-  animation-duration: .2s;
+  animation-duration: 1s;
   animation-timing-function: linear;
   animation-fill-mode: forwards;
 }

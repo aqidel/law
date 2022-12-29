@@ -7,95 +7,124 @@ export default function Form() {
 
   const form = useRef();
 
-  const [name_state, setNameState] = useState(0);
-  const [email_state, setEmailState] = useState(0);
-  const [phone_state, setPhoneState] = useState(0);
-  const [message_state, setMessageState] = useState(0);
+  const initialInput = {
+    input: '',
+    class: 'input-wrap-default',
+    error: ''
+  };
 
-  function validation(e) {
+  const initialTextarea = {
+    input: '',
+    class: 'textarea',
+    error: ''
+  };
+
+  const [name_state, setNameState] = useState(initialInput);
+  const [email_state, setEmailState] = useState(initialInput);
+  const [phone_state, setPhoneState] = useState(initialInput);
+  const [message_state, setMessageState] = useState(initialTextarea);
+
+  function validate_name(e) {
     e.preventDefault();
 
-    if (e.target[0].value == '') {
-      setNameState(-1);
-    } else if (e.target[0].value.length > 50) {
-      setNameState(-2);
-    }
-
-    if (e.target[1].value == '') {
-      setEmailState(-1);
-    } else if (e.target[1].value.match(/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/g) == null) {
-      setEmailState(-2);
-    }
-
-    if (e.target[2].value.match(/^\+\d+$/g) == null) {
-      setPhoneState(-2);
-    }
-
-    if (e.target[3].value == '') {
-      setMessageState(-1);
-    } else if (e.target[3].value.length > 180) {
-      setMessageState(-2);
-    }
-
-    else {
-      setNameState(0);
-      setEmailState(0);
-      setPhoneState(0);
-      setMessageState(0);
-      e.target.reset();
-      sendEmail();
+    if (e.target.value == '') {
+      if (name_state.class == 'input-wrap-active') {
+        setNameState({...name_state, class: 'input-wrap-blue-to-red', error: 'Пустое поле!'});
+      } else {
+        setNameState({...name_state, class: 'input-wrap-error', error: 'Пустое поле!'});
+      }
+    } else if (e.target.value.length > 50) {
+      setNameState({...name_state, class: 'input-wrap-error', error: 'Больше 50 символов!'});
+    } else {
+      setNameState({...name_state, class: 'input-wrap-red-to-blue', input: e.target.value, error: ''});
     }
   }
 
+  /*function validate_email(e) {
+    e.preventDefault();
+
+    if (e.target[0].value == '') {
+      setEmailState({...input, status: -1});
+    } else if (e.target[0].value.match(/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/g) == null) {
+      setEmailState({...input, status: -2});
+    } else {
+      setEmailState({...input, status: 0});
+      e.target.reset();
+    }
+  }
+
+  function validate_phone(e) {
+    e.preventDefault();
+
+    if (e.target[0].value != '' && e.target[0].value.match(/^\+\d+$/g) == null) {
+      setPhoneState({...input, status: -2});
+    } else {
+      setPhoneState({...input, status: 0});
+      e.target.reset();
+    }
+  }
+
+  function validate_message(e) {
+    e.preventDefault();
+
+    if (e.target[0].value == '') {
+      setMessageState({...input, status: -1});
+    } else if (e.target[0].value.length > 180) {
+      setMessageState({...input, status: -2});
+    } else {
+      setMessageState({...input, status: 0});
+      e.target.reset();
+    }
+  }*/
+
   function sendEmail() {
     emailjs.sendForm(YOUR_SERVICE_ID, YOUR_TEMPLATE_ID, form.current, YOUR_PUBLIC_KEY);
+    //e.target.reset();
   };
 
   return (
-    <form ref={form} onSubmit={validation}>
+    <form ref={form} onSubmit={sendEmail}>
       <div className='input-wrap-outer'>
-        <div className={name_state == 0 ? 'input-wrap-inner' : name_state < 0 ? 'input-wrap-inner-error' : 'input-wrap-inner-active'}>
+        <div className={name_state.class}>
           <input 
             className='input'
             type='text' 
             name='name' 
             placeholder='Имя *'
-            onFocus={(e) => setNameState(1)}
-            onBlur={(e) => setNameState(-1)}/>
+            value={name_state.input}
+            onMouseEnter={(e) => name_state.class != 'input-wrap-error' ? setNameState({...name_state, class: 'input-wrap-active'}) : null}
+            onMouseLeave={(e) => name_state.class != 'input-wrap-error' && name_state.class != 'input-wrap-active' ? setNameState({...name_state, class: 'input-wrap-to-default'}) : null}
+            onFocus={(e) => name_state.class != 'input-wrap-error' && name_state.class != 'input-wrap-active' && name_state.class != 'input-wrap-blue-to-red' ? setNameState({...name_state, class: 'input-wrap-active'}) : null}
+            onBlur={(e) => validate_name(e)}
+            onChange={(e) => validate_name(e)}/>
         </div>
-        {<small>Поле должно быть заполнено!</small>}
+        <small>{name_state.error}</small>
       </div>
       <div className='input-wrap-outer'>
-        <div className={email_state == 0 ? 'input-wrap-inner' : email_state < 0 ? 'input-wrap-inner-error' : 'input-wrap-inner-active'}>
+        <div className={email_state.class}>
           <input 
             className='input'
             type='email' 
             name='email' 
-            placeholder='Email *'
-            onFocus={(e) => setEmailState(1)}
-            onBlur={(e) => setEmailState(-1)}/>
+            placeholder='Email *'/>
         </div>
         {<small>Поле должно быть заполнено!</small>}
       </div>
       <div className='input-wrap-outer'>
-        <div className={phone_state == 0 ? 'input-wrap-inner' : phone_state < 0 ? 'input-wrap-inner-error' : 'input-wrap-inner-active'}>
+        <div className={phone_state.class}>
           <input 
             className='input'
             type='text' 
             name='phone' 
-            placeholder='Телефон'
-            onFocus={(e) => setPhoneState(1)}
-            onBlur={(e) => setPhoneState(0)}/>
+            placeholder='Телефон'/>
         </div>
         {<small>Неверный формат номера!</small>}
       </div>
       <div className='textarea-wrap'>
         <textarea
-          className={message_state == 0 ? 'textarea' : message_state < 0 ? 'textarea-error' : 'textarea-active'} 
+          className={message_state.class} 
           name='message' 
-          placeholder='Сообщение *'
-          onFocus={(e) => setMessageState(1)}
-          onBlur={(e) => setMessageState(-1)}/>
+          placeholder='Сообщение *'/>
         {<small>Поле должно быть заполнено!</small>}
         <span>0 / 180</span>
       </div>

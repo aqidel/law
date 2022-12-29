@@ -126,7 +126,13 @@ main {
   margin-bottom: 20px;
 }
 
-.input-wrap-inner, .input-wrap-inner-active, .input-wrap-inner-error {
+.input-wrap-default,
+.input-wrap-active,
+.input-wrap-error,
+.input-wrap-blue-to-red,
+.input-wrap-red-to-blue, 
+.input-wrap-to-default
+{
   position: relative;
 }
 
@@ -146,54 +152,36 @@ main {
   color: #888;
 }
 
-.input-wrap-inner::after {
+.input-wrap-default::after,
+.input-wrap-active::after,
+.input-wrap-error::after,
+.input-wrap-blue-to-red::after,
+.input-wrap-red-to-blue::after,
+.input-wrap-to-default::after 
+{
   display: block;
   position: absolute;
-  bottom: 0;
-  content: '';
-  animation-name: anim;
-  animation-duration: 4s;
-  animation-timing-function: linear;
-  animation-fill-mode: forwards;
-}
-
-@keyframes anim {
-  from {
-    left: 0;
-    right: 0;
-    height: 2px;
-    background-color: #17a8e3;
-  }
-
-  to {
-    left: 50%;
-    right: 50%;
-    height: 2px;
-    background-color: #17a8e3;
-  }
-}
-
-.input-wrap-inner:hover::after, .input-wrap-inner-active::after, .input-wrap-inner-error::after {
-  display: block;
-  position: absolute;
-  bottom: 0;
   height: 2px;
+  bottom: 0;
   content: '';
-  animation-name: input-animation;
   animation-duration: 1s;
   animation-timing-function: linear;
   animation-fill-mode: forwards;
 }
 
-.input-wrap-inner:hover::after, .input-wrap-inner-active::after {
+.input-wrap-active::after, .input-wrap-error::after {
+  animation-name: colors-on;
+}
+
+.input-wrap-active::after {
   background-color: #17a8e3;
 }
 
-.input-wrap-inner-error::after {
+.input-wrap-error::after {
   background-color: #e04562;
 }
 
-@keyframes input-animation {
+@keyframes colors-on {
   from {
     left: 50%;
     right: 50%;
@@ -202,6 +190,61 @@ main {
   to {
     left: 0;
     right: 0;
+  }
+}
+
+.input-wrap-blue-to-red::after {
+  background-color: #17a8e3;
+  animation-name: blue-to-red;
+}
+
+@keyframes blue-to-red {
+  from {
+    left: 50%;
+    right: 50%;
+    background-color: #e04562;
+  }
+
+  to {
+    left: 0;
+    right: 0;
+    background-color: #e04562;
+  }
+}
+
+.input-wrap-red-to-blue::after {
+  background-color: #e04562;
+  animation-name: red-to-blue;
+}
+
+@keyframes red-to-blue {
+  from {
+    left: 50%;
+    right: 50%;
+    background-color: #17a8e3;
+  }
+
+  to {
+    left: 0;
+    right: 0;
+    background-color: #17a8e3;
+  }
+}
+
+.input-wrap-to-default::after {
+  background-color: #17a8e3;
+  animation-name: to-default;
+}
+
+@keyframes to-default {
+  from {
+    left: 0;
+    right: 0;
+  }
+
+  to {
+    left: 50%;
+    right: 50%;
   }
 }
 

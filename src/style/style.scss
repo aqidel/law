@@ -126,12 +126,11 @@ main {
   margin-bottom: 20px;
 }
 
-.input-wrap-default,
-.input-wrap-active,
-.input-wrap-error,
-.input-wrap-blue-to-red,
-.input-wrap-red-to-blue, 
-.input-wrap-to-default
+.input-default,
+.input-hover-on,
+.input-hover-off,
+.input-focus,
+.input-error
 {
   position: relative;
 }
@@ -152,72 +151,39 @@ main {
   color: #888;
 }
 
-.input-wrap-default::after,
-.input-wrap-active::after,
-.input-wrap-error::after,
-.input-wrap-blue-to-red::after,
-.input-wrap-red-to-blue::after,
-.input-wrap-to-default::after 
+.input-default::after,
+.input-hover-on::after,
+.input-hover-off::after,
+.input-focus::after,
+.input-error::after
 {
   display: block;
   position: absolute;
   height: 2px;
   bottom: 0;
   content: '';
-  animation-duration: 1s;
+}
+
+.input-focus::after {
+  left: 0;
+  right: 0;
+  background-color: #17a8e3;
+}
+
+.input-error::after {
+  left: 0;
+  right: 0;
+  background-color: #e04562;
+}
+
+.input-hover-on::after {
+  animation-name: hover-on;
+  animation-duration: .2s;
   animation-timing-function: linear;
   animation-fill-mode: forwards;
 }
 
-.input-wrap-active::after, .input-wrap-error::after {
-  animation-name: colors-on;
-}
-
-.input-wrap-active::after {
-  background-color: #17a8e3;
-}
-
-.input-wrap-error::after {
-  background-color: #e04562;
-}
-
-@keyframes colors-on {
-  from {
-    left: 50%;
-    right: 50%;
-  }
-
-  to {
-    left: 0;
-    right: 0;
-  }
-}
-
-.input-wrap-blue-to-red::after {
-  background-color: #17a8e3;
-  animation-name: blue-to-red;
-}
-
-@keyframes blue-to-red {
-  from {
-    left: 50%;
-    right: 50%;
-    background-color: #e04562;
-  }
-
-  to {
-    left: 0;
-    right: 0;
-    background-color: #e04562;
-  }
-}
-
-.input-wrap-red-to-blue::after {
-  background-color: #e04562;
-  animation-name: red-to-blue;
-}
-
-@keyframes red-to-blue {
+@keyframes hover-on {
   from {
     left: 50%;
     right: 50%;
@@ -231,24 +197,32 @@ main {
   }
 }
 
-.input-wrap-to-default::after {
-  background-color: #17a8e3;
-  animation-name: to-default;
+.input-hover-off::after {
+  animation-name: hover-off;
+  animation-duration: .2s;
+  animation-timing-function: linear;
+  animation-fill-mode: forwards;
 }
 
-@keyframes to-default {
+@keyframes hover-off {
   from {
     left: 0;
     right: 0;
+    background-color: #17a8e3;
   }
 
   to {
     left: 50%;
     right: 50%;
+    background-color: #17a8e3;
   }
 }
 
-.textarea, .textarea-active, .textarea-error {
+.textarea-default,
+.textarea-focus,
+.textarea-error,
+.textarea-hover 
+{
   width: 100%;
   height: 120px;
   border: 1px solid #777771;
@@ -257,11 +231,11 @@ main {
   resize: none;
 }
 
-.textarea {
+.textarea-default {
   padding: 29px 9px 9px;
 }
 
-.textarea:hover, .textarea-active {
+.textarea-hover, .textarea-focus {
   border: 2px solid #17a8e3;
   padding: 28px 8px 8px;
 }
@@ -271,7 +245,11 @@ main {
   padding: 28px 8px 8px;
 }
 
-.textarea::placeholder, .textarea-active::placeholder, .textarea-error::placeholder {
+.textarea-default::placeholder, 
+.textarea-focus::placeholder, 
+.textarea-error::placeholder,
+.textarea-hover::placeholder 
+{
   font-family: Source Serif Pro, sans-serif;
   font-size: 16px;
   line-height: 20px;

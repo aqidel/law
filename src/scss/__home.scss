@@ -269,3 +269,61 @@ main {
   vertical-align: middle;
   fill: #ab9791;
 }
+
+#client-testimonials {
+  padding: 60px 20px 100px;
+}
+
+#client-testimonials-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#client-testimonials-header > svg {
+  width: 77px;
+  height: 77px;
+  fill: #ab9791;
+}
+
+#client-testimonials-header > p {
+  margin: 10px 0 0;
+  font-family: Source Serif Pro, sans-serif;
+  font-size: 22px;
+  line-height: 30px;
+  color: #000000;
+}
+
+#testimonials-wrap {
+  display: flex;
+  flex-direction: column;
+  row-gap: 80px;
+  padding: 40px 60px;
+}
+
+.testimonial {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 20px;
+}
+
+.stars-wrap {
+  display: flex;
+  column-gap: 6px;
+}
+
+.stars-wrap > svg {
+  width: 18px;
+  height: 18px;
+  fill: #fa0;
+}
+
+.testimonial > p {
+  margin: 20px 0 0;
+  font-family: Source Serif Pro, sans-serif;
+  font-size: 18px;
+  line-height: 30px;
+  text-align: center;
+  color: #000000;
+}

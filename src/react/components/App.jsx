@@ -13,7 +13,7 @@ import Pavlov from './pages/Pavlov';
 import Vorontsova from './pages/Vorontsova';
 import SocialResponsibility from './pages/SocialResponsibility';
 import Careers from './pages/Careers';
-import '../../style/style.scss';
+import '../../scss/style.scss';
 
 export default function App() {
   return (

@@ -5,6 +5,9 @@ import legal500_2020 from '../../../img/home/awards/legal500-firm2020.webp';
 import legal500_rl_2020 from '../../../img/home/awards/legal500-recomended-lawyer-2020.webp';
 import step_lawyer from '../../../img/home/awards/step-lawyer.webp';
 import ciarb from '../../../img/home/awards/ciarb.webp';
+import demidov from '../../../img/home/lawyers/demidov-aleksandr.webp';
+import pavlov from '../../../img/home/lawyers/pavlov-andriy.webp';
+import vorontsova from '../../../img/home/lawyers/vorontsova-ekaterina.webp';
 
 export default function Main() {
   return (
@@ -112,6 +115,61 @@ export default function Main() {
               <Link to='/corporate'>Узнать больше</Link>
             </div>
           </div>
+        </div>
+      </div>
+      <div id='the-team'>
+        <div className='card-wrap'>
+          <img src={demidov} alt='img'/>
+          <div className='card-inner-wrap'>
+            <h3>Александр Демидов</h3>
+            <p>Руководящий партнер</p>
+            <div>
+              <Link to='/about/demidov'>
+                <span>Узнать больше</span>
+                <svg viewBox='0 0 256 512'>
+                  <path d='M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z'/>
+                </svg>
+              </Link>
+            </div>
+          </div>
+        </div>
+        <div className='card-wrap'>
+          <img src={vorontsova} alt='img'/>
+          <div className='card-inner-wrap'>
+            <h3>Екатерина Воронцова</h3>
+            <p>Партнер</p>
+            <div>
+              <Link to='/about/vorontsova'>
+                <span>Узнать больше</span>
+                <svg viewBox='0 0 256 512'>
+                  <path d='M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z'/>
+                </svg>
+              </Link>
+            </div>
+          </div>
+        </div>
+        <div className='card-wrap'>
+          <img src={pavlov} alt='img'/>
+          <div className='card-inner-wrap'>
+            <h3>Андрей Павлов</h3>
+            <p>Партнер</p>
+            <div>
+              <Link to='/about/pavlov'>
+                <span>Узнать больше</span>
+                <svg viewBox='0 0 256 512'>
+                  <path d='M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z'/>
+                </svg>
+              </Link>
+            </div>
+          </div>
+        </div>
+        <div id='meet-the-team'>
+          <Link to='/about'>
+            <span>Наша команда</span>
+            <svg viewBox='0 0 448 512'>
+              <path d='M313.941 216H12c-6.627 0-12 5.373-12 12v56c0 6.627 5.373 12 12 12h301.941v46.059c0 21.382 25.851 32.09 40.971 16.971l86.059-86.059c9.373-9.373 9.373-24.569 0-33.941l-86.059-86.059c-15.119-15.119-40.971-4.411-40.971 16.971V216z'/>
+            </svg>
+          </Link>
         </div>
       </div>
     </main>

@@ -419,3 +419,95 @@ main {
   text-decoration: none;
   color: #ab9791;
 }
+
+#the-team {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 80px;
+  padding-top: 20px;
+}
+
+.card-wrap {
+  border-top: 2px solid #ab9791;
+  box-shadow: 0px 0px 10px rgb(20 20 20 / 10%);
+}
+
+.card-wrap > img {
+  width: 300px;
+}
+
+.card-inner-wrap {
+  padding: 20px 25px 15px;
+}
+
+.card-inner-wrap > h3 {
+  margin: 0;
+  font-family: Source Serif Pro, sans-serif;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 28px;
+  text-align: center;
+  color: #000000;
+}
+
+.card-inner-wrap > p {
+  border-bottom: 1px solid rgba(64, 96, 128, 0.4);
+  margin: 0;
+  padding-bottom: 12px;
+  font-family: Source Serif Pro, sans-serif;
+  font-size: 16px;
+  font-style: italic;
+  line-height: 27px;
+  text-align: center;
+  color: #000000;
+}
+
+.card-inner-wrap > div {
+  display: flex;
+  justify-content: end;
+}
+
+.card-inner-wrap a {
+  display: inline-block;
+  padding-top: 15px;
+  font-family: Source Serif Pro, sans-serif;
+  font-size: 16px;
+  font-style: italic;
+  line-height: 28px;
+  text-decoration: none;
+  color: #000000;
+}
+
+.card-inner-wrap svg {
+  display: inline-block;
+  margin-left: 5px;
+  width: 14px;
+  height: 14px;
+  vertical-align: middle;
+  fill: #000000;
+}
+
+#meet-the-team {
+  display: flex;
+  justify-content: center;
+}
+
+#meet-the-team > a {
+  display: inline-block;
+  font-family: Source Serif Pro, sans-serif;
+  font-size: 18px;
+  line-height: 30px;
+  text-decoration: none;
+  color: #ab9791;
+}
+
+#meet-the-team svg {
+  display: inline-block;
+  margin-left: 9px;
+  width: 18px;
+  height: 18px;
+  vertical-align: middle;
+  fill: #ab9791;
+}

@@ -150,6 +150,7 @@ main {
 }
 
 #areas-of-expertise-wrap > div {
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -208,7 +209,8 @@ main {
 
 #card-grid {
   display: grid;
-  justify-items: center;
+  grid-template-columns: 300px;
+  justify-content: center;
   row-gap: 80px;
 }
 
@@ -419,16 +421,30 @@ main {
   }
 
   #awards-wrap {
-    justify-content: normal;
+    justify-content: space-between;
+    justify-self: center;
+    max-width: 500px;
   }
 
   .award, .award > img {
     width: 100px;
   }
 
+  #home-contact-wrap {
+    justify-self: end;
+  }
+
   #areas-of-expertise {
     grid-template-columns: 280px 250px 230px;
     grid-template-rows: repeat(2, 1fr);
+  }
+
+  #card-grid {
+    grid-template-columns: repeat(3, 300px);
+  }
+
+  .card-wrap > img {
+    max-width: 300px;
   }
 
   #testimonials-wrap {
@@ -440,5 +456,22 @@ main {
     border-left: 1px solid rgba(31, 45, 61, 0.5);
     border-right: 1px solid rgba(31, 45, 61, 0.5);
     box-sizing: border-box;
+  }
+}
+
+@media screen and (min-width: 1025px) {
+  #home-about-outer-wrap {
+    display: flex;
+    justify-content: center;
+  }
+
+  #home-about-wrap {
+    grid-template-columns: 1fr 450px;
+    grid-template-areas:
+      'headline form'
+      'maintext form'
+      'awards form';
+    column-gap: 20px;
+    max-width: 1200px;
   }
 }

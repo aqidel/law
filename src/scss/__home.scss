@@ -2,14 +2,14 @@ main {
   width: 100vw;
 }
 
-#home-bg-outer {
+#home-bg-wrap {
   position: relative;
   border-bottom: 2px solid #ab9791;
   padding: 200px 20px 240px;
   background-image: linear-gradient(170deg, #1f2d3d 0%,#406080 80%);
 }
 
-#home-bg-inner::before {
+#home-bg-wrap::before {
   position: absolute;
   top: 0;
   right: 0;
@@ -23,15 +23,17 @@ main {
   content: '';
 }
 
-#home-bg-inner > p {
+#home-bg-wrap > p {
+  position: relative;
   margin: 0;
   font-family: Source Serif Pro, sans-serif;
-  font-size: 42px;
+  font-size: 35px;
   line-height: 55px;
   color: #f5f8fa;
 }
 
-#home-bg-inner > a {
+#home-bg-wrap > a {
+  position: relative;
   display: inline-flex;
   justify-content: center;
   align-items: center;
@@ -46,10 +48,18 @@ main {
 }
 
 #home-about-wrap {
+  display: grid;
+  grid-template-areas:
+    'headline headline'
+    'maintext maintext'
+    'awards awards'
+    'form form';
+  justify-items: center;
   padding: 40px 20px 80px;
 }
 
 #home-headline-wrap {
+  grid-area: headline;
   padding-left: 20px;
   border-left: 2px solid #ab9791;
   box-sizing: border-box;
@@ -64,6 +74,7 @@ main {
 }
 
 #home-maintext {
+  grid-area: maintext;
   margin: 40px 0 25px;
   font-family: Source Serif Pro, sans-serif;
   font-size: 18px;
@@ -73,6 +84,7 @@ main {
 
 #awards-wrap {
   display: flex;
+  grid-area: awards;
   column-gap: 20px;
   padding-bottom: 60px;
 }
@@ -89,8 +101,11 @@ main {
 }
 
 #home-contact-wrap {
+  grid-area: form;
+  max-width: 450px;
   border-top: 2px solid #ab9791;
   padding: 30px 40px 10px;
+  box-sizing: border-box;
   background-color: #f5f8fa;
 }
 
@@ -142,7 +157,7 @@ main {
 }
 
 #areas-of-expertise-wrap h6 {
-  margin: 0;
+  margin: 0 0 60px;
   font-family: Source Serif Pro, sans-serif;
   font-size: 34px;
   font-style: normal;
@@ -152,8 +167,16 @@ main {
   color: #ffffff;
 }
 
+#areas-of-expertise {
+  display: grid;
+  grid-template-columns: 1fr;
+  row-gap: 60px;
+}
+
 .area-of-expertise {
-  margin-top: 60px;
+  display: flex;
+  flex-direction: column;
+  height: 180px;
 }
 
 .area-of-expertise > svg {
@@ -163,7 +186,7 @@ main {
 }
 
 .area-of-expertise > p {
-  margin: 15px 0 25px;
+  margin: 15px 0 0;
   font-family: Source Serif Pro, sans-serif;
   font-size: 18px;
   line-height: 30px;
@@ -171,6 +194,7 @@ main {
 }
 
 .area-of-expertise > a {
+  margin: auto 0 0;
   font-family: Source Serif Pro, sans-serif;
   font-size: 18px;
   line-height: 30px;
@@ -179,11 +203,13 @@ main {
 }
 
 #the-team {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  row-gap: 80px;
   padding-top: 20px;
+}
+
+#card-grid {
+  display: grid;
+  justify-items: center;
+  row-gap: 80px;
 }
 
 .card-wrap {
@@ -250,6 +276,7 @@ main {
 #meet-the-team {
   display: flex;
   justify-content: center;
+  margin-top: 80px;
 }
 
 #meet-the-team > a {
@@ -295,17 +322,17 @@ main {
 }
 
 #testimonials-wrap {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: 1fr;
   row-gap: 80px;
-  padding: 40px 60px;
+  padding-top: 40px;
 }
 
 .testimonial {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-top: 20px;
+  padding: 20px 60px 0;
 }
 
 .stars-wrap {
@@ -326,4 +353,92 @@ main {
   line-height: 30px;
   text-align: center;
   color: #000000;
+}
+
+@media screen and (min-width: 600px) {
+  #awards-wrap {
+    justify-content: center;
+  }
+
+  .award {
+    width: 125px;
+  }
+
+  .award > img {
+    width: 125px;
+    border-radius: 9999px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  #home-bg-inner > p {
+    font-size: 50px;
+    line-height: 65px;
+  }
+
+  #areas-of-expertise {
+    grid-template-columns: 300px 1fr;
+    grid-template-rows: repeat(3, 1fr);
+    column-gap: 20px;
+  }
+
+  #card-grid {
+    padding: 0 20px 0;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 20px;
+    row-gap: 0;
+  }
+
+  .card-wrap > img {
+    width: 100%;
+  }
+
+  .card-inner-wrap {
+    padding: 20px 15px 15px;
+  }
+
+  .card-inner-wrap > h3 {
+    font-size: 18px;
+    line-height: 24px;
+  }
+
+  .card-inner-wrap p, .card-inner-wrap a {
+    font-size: 14px;
+    line-height: 24px;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  #home-about-wrap {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-areas:
+      'headline headline'
+      'maintext maintext'
+      'awards form';
+    justify-items: normal;
+  }
+
+  #awards-wrap {
+    justify-content: normal;
+  }
+
+  .award, .award > img {
+    width: 100px;
+  }
+
+  #areas-of-expertise {
+    grid-template-columns: 280px 250px 230px;
+    grid-template-rows: repeat(2, 1fr);
+  }
+
+  #testimonials-wrap {
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 20px;
+  }
+
+  .testimonial-middle {
+    border-left: 1px solid rgba(31, 45, 61, 0.5);
+    border-right: 1px solid rgba(31, 45, 61, 0.5);
+    box-sizing: border-box;
+  }
 }

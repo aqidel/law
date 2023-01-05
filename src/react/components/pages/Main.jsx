@@ -13,11 +13,9 @@ import vorontsova from '../../../img/home/lawyers/vorontsova-ekaterina.webp';
 export default function Main() {
   return (
     <main>
-      <div id='home-bg-outer'>
-        <div id='home-bg-inner'>
-          <p>Наши адвокаты на Кипре помогут вам с переездом, недвижимостью, бизнесом и другими вопросами быстро и качественно.</p>
-          <Link to='/contact'>Бесплатная консультация</Link>
-        </div>
+      <div id='home-bg-wrap'>
+        <p>Наши адвокаты на Кипре помогут вам с переездом, недвижимостью, бизнесом и другими вопросами быстро и качественно.</p>
+        <Link to='/contact'>Бесплатная консультация</Link>
       </div>
       <div id='home-about-wrap'>
         <div id='home-headline-wrap'>
@@ -27,7 +25,7 @@ export default function Main() {
           </p>
         </div>
         <p id='home-maintext'>
-          Переехать на Кипр и создать свою компанию на Кипре можно легко и без стресса. 
+          Переехать на Кипр и создать свою компанию на можно легко и без стресса. 
           Позвольте нам предоставить вам все необходимое, включая иммиграционные правила и разрешения на Кипр, 
           помочь вам безопасно купить недвижимость на Кипре, создать свою компанию и быстро и без проблем получить налоговое резидентство Кипра.
         </p>
@@ -119,48 +117,50 @@ export default function Main() {
         </div>
       </div>
       <div id='the-team'>
-        <div className='card-wrap'>
-          <img src={demidov} alt='img'/>
-          <div className='card-inner-wrap'>
-            <h3>Александр Демидов</h3>
-            <p>Руководящий партнер</p>
-            <div>
-              <Link to='/about/demidov'>
-                <span>Узнать больше</span>
-                <svg viewBox='0 0 256 512'>
-                  <path d='M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z'/>
-                </svg>
-              </Link>
+        <div id='card-grid'>
+          <div className='card-wrap'>
+            <img src={demidov} alt='img'/>
+            <div className='card-inner-wrap'>
+              <h3>Александр Демидов</h3>
+              <p>Руководящий партнер</p>
+              <div>
+                <Link to='/about/demidov'>
+                  <span>Узнать больше</span>
+                  <svg viewBox='0 0 256 512'>
+                    <path d='M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z'/>
+                  </svg>
+                </Link>
+              </div>
             </div>
           </div>
-        </div>
-        <div className='card-wrap'>
-          <img src={vorontsova} alt='img'/>
-          <div className='card-inner-wrap'>
-            <h3>Екатерина Воронцова</h3>
-            <p>Партнер</p>
-            <div>
-              <Link to='/about/vorontsova'>
-                <span>Узнать больше</span>
-                <svg viewBox='0 0 256 512'>
-                  <path d='M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z'/>
-                </svg>
-              </Link>
+          <div className='card-wrap'>
+            <img src={vorontsova} alt='img'/>
+            <div className='card-inner-wrap'>
+              <h3>Екатерина Воронцова</h3>
+              <p>Партнер</p>
+              <div>
+                <Link to='/about/vorontsova'>
+                  <span>Узнать больше</span>
+                  <svg viewBox='0 0 256 512'>
+                    <path d='M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z'/>
+                  </svg>
+                </Link>
+              </div>
             </div>
           </div>
-        </div>
-        <div className='card-wrap'>
-          <img src={pavlov} alt='img'/>
-          <div className='card-inner-wrap'>
-            <h3>Андрей Павлов</h3>
-            <p>Партнер</p>
-            <div>
-              <Link to='/about/pavlov'>
-                <span>Узнать больше</span>
-                <svg viewBox='0 0 256 512'>
-                  <path d='M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z'/>
-                </svg>
-              </Link>
+          <div className='card-wrap'>
+            <img src={pavlov} alt='img'/>
+            <div className='card-inner-wrap'>
+              <h3>Андрей Павлов</h3>
+              <p>Партнер</p>
+              <div>
+                <Link to='/about/pavlov'>
+                  <span>Узнать больше</span>
+                  <svg viewBox='0 0 256 512'>
+                    <path d='M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z'/>
+                  </svg>
+                </Link>
+              </div>
             </div>
           </div>
         </div>
@@ -197,7 +197,7 @@ export default function Main() {
               <em>Владимир</em>
             </p>
           </div>
-          <div className='testimonial'>
+          <div className='testimonial testimonial-middle'>
             <Stars/>
             <p>
               Все сотрудники дружелюбны и всегда радушно принимают вас и относятся к вам как к личности.

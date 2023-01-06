@@ -40,11 +40,17 @@ main {
   margin-top: 30px;
   border: 2px solid #ab9791;
   padding: 7px 16px;
+  transition: all 0.4s ease-in-out;
   font-family: Source Serif Pro, sans-serif;
   font-size: 18px;
   line-height: 30px;
   color: #ffffff;
   text-decoration: none;
+}
+
+#home-bg-wrap > a:hover {
+  border: 2px solid #b08b80;
+  transform: translate3d(0, -4px, 0);
 }
 
 #home-about-wrap {
@@ -200,7 +206,12 @@ main {
   font-size: 18px;
   line-height: 30px;
   text-decoration: none;
+  transition: all 0.2s ease-in-out;
   color: #ab9791;
+}
+
+.area-of-expertise > a:hover {
+  color: #c18d7e;
 }
 
 #the-team {
@@ -258,6 +269,7 @@ main {
 .card-inner-wrap a {
   display: inline-block;
   padding-top: 15px;
+  transition: all 0.2s ease-in-out;
   font-family: Source Serif Pro, sans-serif;
   font-size: 16px;
   font-style: italic;
@@ -266,12 +278,21 @@ main {
   color: #000000;
 }
 
+.card-inner-wrap a:hover {
+  color: #406080;
+}
+
+.card-inner-wrap a:hover > svg {
+  fill: #406080;
+}
+
 .card-inner-wrap svg {
   display: inline-block;
   margin-left: 5px;
   width: 14px;
   height: 14px;
   vertical-align: middle;
+  transition: all 0.2s ease-in-out;
   fill: #000000;
 }
 
@@ -283,11 +304,20 @@ main {
 
 #meet-the-team > a {
   display: inline-block;
+  transition: all 0.2s ease-in-out;
   font-family: Source Serif Pro, sans-serif;
   font-size: 18px;
   line-height: 30px;
   text-decoration: none;
   color: #ab9791;
+}
+
+#meet-the-team > a:hover {
+  color: #c18d7e;
+}
+
+#meet-the-team > a:hover > svg {
+  fill: #c18d7e;
 }
 
 #meet-the-team svg {
@@ -296,6 +326,7 @@ main {
   width: 18px;
   height: 18px;
   vertical-align: middle;
+  transition: all 0.2s ease-in-out;
   fill: #ab9791;
 }
 

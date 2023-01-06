@@ -46,11 +46,17 @@ footer::before {
   align-items: center;
   border: 2px solid #ab9791;
   padding: 7px 16px;
+  transition: all 0.4s ease-in-out;
   font-family: Source Serif Pro, sans-serif;
   font-size: 18px;
   line-height: 30px;
   color: #ffffff;
   text-decoration: none;
+}
+
+#footer-contact-wrap > a:hover {
+  border: 2px solid #b08b80;
+  transform: translate3d(0, -4px, 0);
 }
 
 #footer-grid {
@@ -72,11 +78,20 @@ footer::before {
 
 .footer-grid-element span, .footer-grid-element a {
   display: inline-block;
+  transition: all 0.4s ease-in-out;
   font-family: Source Serif Pro, sans-serif;
   font-size: 17px;
   line-height: 29px;
   text-decoration: none;
   color: #ffffff;
+}
+
+.footer-grid-element > a:hover > span {
+  color: #ab9791;
+}
+
+.footer-grid-element > a:hover > svg {
+  fill: #ab9791;
 }
 
 .footer-grid-element svg {
@@ -85,6 +100,7 @@ footer::before {
   height: 15px;
   margin-right: 7px;
   vertical-align: middle;
+  transition: all 0.4s ease-in-out;
   fill: #ffffff;
 }
 

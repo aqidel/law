@@ -14,8 +14,10 @@ export default function Main() {
   return (
     <main>
       <div id='home-bg-wrap'>
-        <p>Наши адвокаты на Кипре помогут вам с переездом, недвижимостью, бизнесом и другими вопросами быстро и качественно.</p>
-        <Link to='/contact'>Бесплатная консультация</Link>
+        <div id='home-bg-inner-wrap'>
+          <p>Наши адвокаты на Кипре помогут вам с переездом, недвижимостью, бизнесом и другими вопросами быстро и качественно.</p>
+          <Link to='/contact'>Бесплатная консультация</Link>
+        </div>
       </div>
       <div id='home-about-outer-wrap'>
         <div id='home-about-wrap'>

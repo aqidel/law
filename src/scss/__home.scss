@@ -1,5 +1,5 @@
 main {
-  width: 100vw;
+  width: 100%;
 }
 
 #home-bg-wrap {
@@ -411,6 +411,10 @@ main {
 }
 
 @media screen and (min-width: 1024px) {
+  #home-bg-wrap > p {
+    max-width: 800px;
+  }
+
   #home-about-wrap {
     grid-template-columns: repeat(2, 1fr);
     grid-template-areas:

@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Routes, Route, Link } from 'react-router-dom';
 import Main from './pages/Main';
+import FooterElement from './FooterElement';
 import Practice from './pages/Practice';
 import Property from './pages/Property';
 import ProbateWills from './pages/ProbateWills';
@@ -13,12 +14,78 @@ import Pavlov from './pages/Pavlov';
 import Vorontsova from './pages/Vorontsova';
 import SocialResponsibility from './pages/SocialResponsibility';
 import Careers from './pages/Careers';
+import Contact from './pages/Contact';
 import '../../scss/style.scss';
 
 export default function App() {
+  const [burgerClicked, setBurger] = useState(false);
+  const [practiceSubOpen, setPracticeSub] = useState(false);
+  const [aboutSubOpen, setAboutSub] = useState(false);
+
   return (
-    <React.Fragment>
-      <header></header>
+    <div id={burgerClicked ? 'scroll-block' : null}>
+      <header>
+        <div id='burger-wrap' onClick={() => setBurger(!burgerClicked)}>
+          <span className={'upper-line' + (burgerClicked ? ' upper-line-active' : '')}/>
+          <span className={'mid-line' + (burgerClicked ? ' mid-line-active' : '')}/>
+          <span className={'down-line' + (burgerClicked ? ' down-line-active' : '')}/>
+        </div>
+        <nav id={burgerClicked ? 'menu-wrap-open' : null}>
+          <Link className='nav-link-no-sub' to='/'>
+            <span>На главную</span>
+          </Link>
+          <div className='nav-link-wrap'>
+            <Link to='/practice'>
+              <span>Практика</span>
+            </Link>
+            <svg 
+              className={practiceSubOpen ? 'svg-up' : 'svg-down'}
+              onClick={() => setPracticeSub(!practiceSubOpen)}
+              viewBox='0 0 330 512'>
+                <path d='M305.913 197.085c0 2.266-1.133 4.815-2.833 6.514L171.087 335.593c-1.7 1.7-4.249 2.832-6.515 2.832s-4.815-1.133-6.515-2.832L26.064 203.599c-1.7-1.7-2.832-4.248-2.832-6.514s1.132-4.816 2.832-6.515l14.162-14.163c1.7-1.699 3.966-2.832 6.515-2.832 2.266 0 4.815 1.133 6.515 2.832l111.316 111.317 111.316-111.317c1.7-1.699 4.249-2.832 6.515-2.832s4.815 1.133 6.515 2.832l14.162 14.163c1.7 1.7 2.833 4.249 2.833 6.515z'/>
+            </svg>
+          </div>
+          <div className={practiceSubOpen ? 'sub-menu-open' : 'sub-menu-closed'}>
+            <Link className='nav-link-no-sub' to='/property'>
+              <span>Недвижимость на Кипре</span>
+            </Link>
+            <Link className='nav-link-no-sub' to='/probate-wills'>
+              <span>Наследство и завещания</span>
+            </Link>
+            <Link className='nav-link-no-sub' to='/immigration'>
+              <span>Иммиграция на Кипр</span>
+            </Link>
+            <Link className='nav-link-no-sub' to='/corporate'>
+              <span>Корпоративное право</span>
+            </Link>
+            <Link className='nav-link-no-sub' to='/litigation'>
+              <span>Судебные споры</span>
+            </Link>
+          </div>
+          <div className='nav-link-wrap'>
+            <Link to='/about'>
+              <span>О нас</span>
+            </Link>
+            <svg 
+              className={aboutSubOpen ? 'svg-up' : 'svg-down'}
+              viewBox='0 0 330 512' 
+              onClick={() => setAboutSub(!aboutSubOpen)}>
+                <path d='M305.913 197.085c0 2.266-1.133 4.815-2.833 6.514L171.087 335.593c-1.7 1.7-4.249 2.832-6.515 2.832s-4.815-1.133-6.515-2.832L26.064 203.599c-1.7-1.7-2.832-4.248-2.832-6.514s1.132-4.816 2.832-6.515l14.162-14.163c1.7-1.699 3.966-2.832 6.515-2.832 2.266 0 4.815 1.133 6.515 2.832l111.316 111.317 111.316-111.317c1.7-1.699 4.249-2.832 6.515-2.832s4.815 1.133 6.515 2.832l14.162 14.163c1.7 1.7 2.833 4.249 2.833 6.515z'/>
+            </svg>
+          </div>
+          <div className={aboutSubOpen ? 'sub-menu-open' : 'sub-menu-closed'}>
+            <Link className='nav-link-no-sub' to='/social-responsibility'>
+              <span>Социальная ответственность</span>
+            </Link>
+            <Link className='nav-link-no-sub' to='/careers'>
+              <span>Карьера</span>
+            </Link>
+          </div>
+          <Link className='nav-link-no-sub' to='/contact'>
+            <span>Контакты</span>
+          </Link>
+        </nav>
+      </header>
       <Routes>
         <Route path='/' element={<Main/>}/>
         <Route path='/practice' element={<Practice/>}/>
@@ -33,6 +100,7 @@ export default function App() {
         <Route path='/about/vorontsova' element={<Vorontsova/>}/>
         <Route path='/social-responsibility' element={<SocialResponsibility/>}/>
         <Route path='/careers' element={<Careers/>}/>
+        <Route path='/contact' element={<Contact/>}/>
       </Routes>
       <footer>
         <div id='footer-content-wrap'>
@@ -65,44 +133,14 @@ export default function App() {
               </div>
             </div>
             <div className='footer-grid-element'>
-              <Link to='/immigration'>
-                <svg viewBox='0 0 256 512'>
-                  <path d='M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z'/>
-                </svg>
-                <span>Иммиграция на Кипр</span>
-              </Link>
-              <Link to='/property'>
-                <svg viewBox='0 0 256 512'>
-                  <path d='M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z'/>
-                </svg>
-                <span>Недвижимость на Кипре</span>
-              </Link>
-              <Link to='/probate-wills'>
-                <svg viewBox='0 0 256 512'>
-                  <path d='M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z'/>
-                </svg>
-                <span>Наследство и завещания</span>
-              </Link>
+              <FooterElement link='/immigration' text='Иммиграция на Кипр'/>
+              <FooterElement link='/property' text='Недвижимость на Кипре'/>
+              <FooterElement link='/probate-wills' text='Наследство и завещания'/>
             </div>
             <div className='footer-grid-element'>
-              <Link to='/litigation'>
-                <svg viewBox='0 0 256 512'>
-                  <path d='M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z'/>
-                </svg>
-                <span>Судебные споры</span>
-              </Link>
-              <Link to='/corporate'>
-                <svg viewBox='0 0 256 512'>
-                  <path d='M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z'/>
-                </svg>
-                <span>Корпоративное право</span>
-              </Link>
-              <Link to='/corporate'>
-                <svg viewBox='0 0 256 512'>
-                  <path d='M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z'/>
-                </svg>
-                <span>Трасты</span>
-              </Link>
+              <FooterElement link='/litigation' text='Судебные споры'/>
+              <FooterElement link='/corporate' text='Корпоративное право'/>
+              <FooterElement link='/corporate' text='Трасты'/>
             </div>
           </div>
         </div>
@@ -110,6 +148,6 @@ export default function App() {
           © 2023 Pavlov & Demidov LLC | Created by Aqidel
         </div>
       </footer>
-    </React.Fragment>
+    </div>
   );
 }

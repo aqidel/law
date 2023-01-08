@@ -1,4 +1,4 @@
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 767px) {
   #scroll-block {
     height: 100vh;
     overflow-y: hidden;
@@ -76,15 +76,11 @@
     z-index: 1;
   }
 
-  .sub-menu-open {
-    display: block;
-  }
-
-  .sub-menu-closed {
+  .sub-menu {
     display: none;
   }
 
-  #menu-wrap-open a, .sub-menu-open > a {
+  #menu-wrap-open a, .sub-menu > a {
     display: block;
     font-family: Source Serif Pro, sans-serif;
     font-size: 20px;
@@ -94,11 +90,11 @@
     color: #ffffff;
   }
 
-  #menu-wrap-open a:hover, .sub-menu-open > a:hover {
+  #menu-wrap-open a:hover, .sub-menu > a:hover {
     color: #ab9791;
   }
 
-  .nav-link-no-sub {
+  #nav-to-home, #nav-to-contacts {
     padding-right: 30px;
   }
 
@@ -106,9 +102,14 @@
     display: flex;
     align-items: center;
     justify-content: flex-end;
+    flex-wrap: wrap;
   }
 
-  .svg-down {
+  #nav-practice-checkbox, #nav-about-checkbox {
+    display: none;
+  }
+
+  .nav-link-wrap svg {
     width: 20px;
     height: 20px;
     padding-left: 10px;
@@ -116,18 +117,130 @@
     fill: #ffffff;
   }
 
-  .svg-up {
+  .nav-link-wrap svg:hover {
+    cursor: pointer;
+  }
+
+  #nav-practice-checkbox:checked + label > svg,
+  #nav-about-checkbox:checked + label > svg
+  {
     width: 20px;
     height: 20px;
     padding-right: 10px;
+    padding-left: 0;
     vertical-align: middle;
     transform: rotate(180deg);
     fill: #ab9791;
   }
+
+  #nav-practice-checkbox:checked ~ .sub-menu,
+  #nav-about-checkbox:checked ~ .sub-menu
+  {
+    display: block;
+    width: 100%;
+  }
 }
 
-@media screen and (min-width: 601px) {
+@media screen and (min-width: 768px) {
   #burger-wrap {
     display: none;
+  }
+
+  header {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 1;
+  }
+
+  nav {
+    display: flex;
+    justify-content: end;
+    column-gap: 40px;
+    padding: 30px 20px;
+    box-sizing: border-box;
+  }
+
+  nav a {
+    font-family: Source Serif Pro, sans-serif;
+    font-size: 22px;
+    line-height: 54px;
+    text-decoration: none;
+    color: #ffffff;
+  }
+
+  #nav-to-home:hover {
+    color: #ab9791;
+  }
+
+  .nav-link-wrap {
+    display: flex;
+    align-items: center;
+    position: relative;
+  }
+
+  .sub-menu {
+    display: none;
+  }
+
+  #nav-practice-checkbox, #nav-about-checkbox {
+    display: none;
+  }
+
+  .nav-link-wrap:hover > .sub-menu, .nav-link-wrap > .sub-menu:hover {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 54px;
+    right: 0;
+    width: 200px;
+    box-sizing: border-box;
+    background-color: #1f2d3d;
+  }
+
+  .nav-link-wrap svg {
+    width: 22px;
+    height: 22px;
+    padding-left: 10px;
+    vertical-align: middle;
+    fill: #ffffff;
+  }
+
+  .nav-link-wrap:hover svg {
+    fill: #ab9791;
+    cursor: pointer;
+  }
+
+  .nav-link-wrap:hover > a {
+    color: #ab9791;
+  }
+
+  .sub-menu a {
+    padding: 18px 24px;
+    font-family: Source Serif Pro, sans-serif;
+    font-size: 19px;
+    line-height: normal;
+    text-decoration: none;
+    color: #ffffff;
+  }
+
+  .sub-menu a:hover {
+    background-color: #406080;
+  }
+
+  #nav-to-contacts {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid #ab9791;
+    padding: 0 16px;
+    transition: all 0.4s ease-in-out;
+    line-height: 38px;
+  }
+
+  #nav-to-contacts:hover {
+    border: 2px solid #b08b80;
+    transform: translate3d(0, -4px, 0);
   }
 }

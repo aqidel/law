@@ -1,9 +1,4 @@
 @media screen and (max-width: 767px) {
-  #scroll-block {
-    height: 100vh;
-    overflow-y: hidden;
-  }
-
   header {
     position: absolute;
     top: 0;
@@ -12,6 +7,10 @@
     display: flex;
     justify-content: end;
     padding: 40px;
+  }
+
+  #burger-checkbox {
+    display: none;
   }
 
   #burger-wrap {
@@ -32,30 +31,30 @@
     font-size: 10px;
   }
 
-  .upper-line {
+  #upper-line {
     left: 0;
   }
 
-  .upper-line-active {
+  #burger-checkbox:checked + label #upper-line {
     transform: translateY(10px) translateY(-50%) rotate(-45deg);
   }
 
-  .mid-line {
+  #mid-line {
     margin: 9px 0;
     top: 0;
     left: 0;
   }
 
-  .mid-line-active {
+  #burger-checkbox:checked + label #mid-line {
     opacity: 0;
   }
 
-  .down-line {
+  #down-line {
     left: 0;
     bottom: 0;
   }
 
-  .down-line-active {
+  #burger-checkbox:checked + label #down-line {
     transform: translateY(-10px) translateY(50%) rotate(45deg);
   }
 
@@ -63,7 +62,7 @@
     display: none;
   }
 
-  #menu-wrap-open {
+  #burger-checkbox:checked ~ nav {
     display: block;
     position: absolute;
     top: 0;
@@ -80,7 +79,7 @@
     display: none;
   }
 
-  #menu-wrap-open a, .sub-menu > a {
+  nav a, .sub-menu > a {
     display: block;
     font-family: Source Serif Pro, sans-serif;
     font-size: 20px;
@@ -90,7 +89,11 @@
     color: #ffffff;
   }
 
-  #menu-wrap-open a:hover, .sub-menu > a:hover {
+  .sub-menu > a {
+    padding-right: 30px;
+  }
+
+  nav a:hover, .sub-menu > a:hover {
     color: #ab9791;
   }
 
@@ -142,7 +145,7 @@
 }
 
 @media screen and (min-width: 768px) {
-  #burger-wrap {
+  #burger-wrap, #burger-checkbox {
     display: none;
   }
 
@@ -258,6 +261,11 @@
 
   nav a {
     font-size: 16px;
+    line-height: 38px;
+  }
+
+  .nav-link-wrap:hover > .sub-menu, .nav-link-wrap > .sub-menu:hover {
+    top: 38px;
   }
 
   .nav-link-wrap svg {

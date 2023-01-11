@@ -163,14 +163,15 @@
 .textarea-error,
 .textarea-hover 
 {
+  position: relative;
   width: 100%;
   height: 120px;
   border: 1px solid #777771;
   box-sizing: border-box;
-  background-color: #f5f8fa;
+  background-color: transparent;
   outline: none;
   resize: none;
-  transition: .2s ease;
+  transition: all 0.2s ease;
 }
 
 .textarea-default {

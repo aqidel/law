@@ -114,35 +114,6 @@ main {
   border-radius: 9999px;
 }
 
-#home-contact-wrap {
-  grid-area: form;
-  max-width: 450px;
-  border-top: 2px solid #ab9791;
-  padding: 30px 40px 10px;
-  box-sizing: border-box;
-  background-color: #f5f8fa;
-}
-
-#home-contact-wrap > h2 {
-  margin: 0 0 15px;
-  font-family: Source Serif Pro, sans-serif;
-  font-size: 26px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 36px;
-  color: #000000;
-  text-align: center;
-}
-
-#home-contact-wrap > p {
-  margin: 0 0 25px;
-  font-family: Source Serif Pro, sans-serif;
-  font-size: 18px;
-  line-height: 30px;
-  color: #000000;
-  text-align: center;
-}
-
 #areas-of-expertise-wrap {
   position: relative;
   border-top: 2px solid #ab9791;
@@ -471,10 +442,6 @@ main {
 
   .award, .award > img {
     width: 100px;
-  }
-
-  #home-contact-wrap {
-    justify-self: end;
   }
 
   #areas-of-expertise {

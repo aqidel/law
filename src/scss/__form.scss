@@ -1,3 +1,32 @@
+#form-wrap {
+  grid-area: form;
+  max-width: 450px;
+  border-top: 2px solid #ab9791;
+  padding: 30px 40px 10px;
+  box-sizing: border-box;
+  background-color: #f5f8fa;
+}
+
+#form-wrap > h2 {
+  margin: 0 0 15px;
+  font-family: Source Serif Pro, sans-serif;
+  font-size: 26px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 36px;
+  color: #000000;
+  text-align: center;
+}
+
+#form-wrap > p {
+  margin: 0 0 25px;
+  font-family: Source Serif Pro, sans-serif;
+  font-size: 18px;
+  line-height: 30px;
+  color: #000000;
+  text-align: center;
+}
+
 .label-up,
 .label-up-error,
 .label-down
@@ -231,4 +260,10 @@
 
 #submit-btn:hover {
   background-color: #008fca;
+}
+
+@media screen and (min-width: 1024px) {
+  #form-wrap {
+    justify-self: end;
+  }
 }

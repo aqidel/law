@@ -46,11 +46,7 @@ export default function Main() {
               <img src={ciarb} alt='img'/>
             </figure>
           </div>
-          <div id='home-contact-wrap'>
-            <h2>Свяжитесь с нами сегодня</h2>
-            <p>Задайте свой вопрос и наш юрист свяжется с вами.</p>
-            <Form/>
-          </div>
+          <Form/>
         </div>
       </div>
       <div id='areas-of-expertise-wrap'>

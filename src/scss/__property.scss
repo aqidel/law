@@ -1,0 +1,168 @@
+#property-bg-wrap {
+  box-sizing: border-box;
+  background-color: rgba(31, 45, 61, 0.7);
+  background-image: linear-gradient(0deg, rgba(31, 45, 61, 0.7), rgba(31, 45, 61, 0.7)), url('../img/property/villa_scaled.webp');
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+
+  #property-header-wrap {
+    padding: 160px 20px;
+
+    h1 {
+      margin: 0;
+      font-family: Source Serif Pro, sans-serif;
+      font-size: 30px;
+      font-weight: 400;
+      font-style: normal;
+      line-height: 39px;
+      text-align: center;
+      color: #ffffff;
+    }
+  }
+}
+
+#property-content-grid {
+  display: grid;
+  padding: 100px 20px 20px;
+
+  #property-maintext {
+    padding: 0 0 60px;
+
+    h2 {
+      margin: 0 0 30px;
+      font-family: Source Serif Pro, sans-serif;
+      font-size: 26px;
+      font-weight: 400;
+      font-style: normal;
+      line-height: 36px;
+      color: #1f2d3d;
+    }
+
+    h3 {
+      margin: 0 0 30px;
+      font-family: Source Serif Pro, sans-serif;
+      font-size: 24px;
+      font-weight: 400;
+      font-style: normal;
+      line-height: 33px;
+      color: #1f2d3d;
+    }
+
+    h4 {
+      margin: 0 0 20px;
+      font-family: Source Serif Pro, sans-serif;
+      font-size: 22px;
+      font-weight: 400;
+      font-style: normal;
+      line-height: 30px;
+      color: #1f2d3d;
+    }
+
+    p {
+      margin: 0 0 25px;
+      font-family: Source Serif Pro, sans-serif;
+      font-size: 18px;
+      line-height: 30px;
+      color: #1f2d3d;
+    }
+
+    img {
+      width: 100%;
+      height: auto;
+      margin-bottom: 30px;
+    }
+  }
+
+  #property-form-wrap {
+    padding-bottom: 60px;
+  }
+
+  #property-partner-grid {
+    display: grid;
+    padding-bottom: 80px;
+
+    #property-avatar-wrap {
+      display: flex;
+      justify-content: center;
+      padding-bottom: 40px;
+
+      img {
+        width: 270px;
+        height: auto;
+        box-sizing: border-box;
+        box-shadow: 10px 10px 0px hsl(0, 0%, 89%);
+      }
+    }
+
+    #quote {
+      position: relative;
+      padding: 40px 0 0 40px;
+
+      p {
+        margin: 0 0 25px;
+        font-family: Source Serif Pro, sans-serif;
+        font-size: 18px;
+        line-height: 30px;
+        color: #1f2d3d;
+      }
+
+      p::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background-image: url('../img/property/quote-yellow.svg');
+        background-size: 100px;
+        background-repeat: no-repeat;
+        background-position: left top;
+        opacity: 0.2;
+      }
+    }
+  }
+
+  #property-about-grid {
+    display: grid;
+
+    #why-us, #how-it, #purchase, #sale {
+      padding: 20px 20px 40px;
+    }
+
+    #why-us {
+      h4 {
+        margin: 0 0 20px;
+        font-family: Source Serif Pro, sans-serif;
+        font-size: 22px;
+        font-weight: 400;
+        font-style: normal;
+        line-height: 30px;
+        color: #1f2d3d;
+
+        svg {
+          width: 28px;
+          height: 28px;
+          padding: 0 11px 4px 0;
+          vertical-align: middle;
+          fill: #1f2d3d;
+        }
+      }
+    }
+
+    p {
+      margin: 0 0 10px;
+      font-family: Source Serif Pro, sans-serif;
+      font-size: 18px;
+      line-height: 30px;
+      color: #1f2d3d;
+
+      svg {
+        width: 18px;
+        height: 18px;
+        vertical-align: middle;
+        fill: #ab9791;
+      }
+    }
+  }
+}

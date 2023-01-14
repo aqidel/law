@@ -1,12 +1,11 @@
-#pw-bg-wrap {
+.page-bg-wrap {
   box-sizing: border-box;
   background-color: rgba(31, 45, 61, 0.7);
-  background-image: linear-gradient(0deg, rgba(31, 45, 61, 0.7), rgba(31, 45, 61, 0.7)), url('../img/probate-wills/parent.webp');
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
 
-  #pw-header-wrap {
+  .page-header-wrap {
     padding: 160px 20px;
 
     h1 {
@@ -22,13 +21,25 @@
   }
 }
 
-#pw-content {
+#property-bg {
+  background-image: linear-gradient(0deg, rgba(31, 45, 61, 0.7), rgba(31, 45, 61, 0.7)), url('../img/property/villa_scaled.webp');
+}
 
-  #pw-content-grid {
+#pw-bg {
+  background-image: linear-gradient(0deg, rgba(31, 45, 61, 0.7), rgba(31, 45, 61, 0.7)), url('../img/probate-wills/parent.webp');
+}
+
+#immigration-bg {
+  background-image: linear-gradient(0deg, rgba(31, 45, 61, 0.7), rgba(31, 45, 61, 0.7)), url('../img/immigration/tourist.webp');
+}
+
+.page-content {
+
+  .page-content-grid {
     display: grid;
     padding: 100px 20px 20px;
   
-    #pw-maintext {
+    .page-maintext {
       padding: 0 0 60px;
   
       h2 {
@@ -76,17 +87,17 @@
       }
     }
 
-    #pw-form-wrap {
+    .page-form-wrap {
       display: flex;
       justify-content: center;
       padding-bottom: 60px;
     }
 
-    #pw-partner-grid {
+    .page-partner-grid {
       display: grid;
       padding-bottom: 80px;
   
-      #pw-avatar-wrap {
+      .page-avatar-wrap {
         display: flex;
         justify-content: center;
         padding-bottom: 40px;
@@ -99,7 +110,7 @@
         }
       }
   
-      #quote {
+      .quote {
         position: relative;
         padding: 40px 0 0 40px;
   
@@ -127,11 +138,11 @@
       }
     }
 
-    #pw-about-grid {
+    .page-about-grid {
       display: grid;
       justify-content: center;
   
-      #why-us, #what-we-do, #wp-process, #administration {
+      .first, .second, .third, .fourth {
         padding: 20px 20px 40px;
         box-sizing: border-box;
   
@@ -172,7 +183,7 @@
       }
     }
 
-    #contact-us {
+    .contact-us {
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -209,15 +220,15 @@
 }
 
 @media screen and (min-width: 768px) {
-  #pw-content {
+  .page-content {
 
-    #pw-content-grid {
+    .page-content-grid {
 
-      #pw-partner-grid {
+      .page-partner-grid {
         grid-template-columns: 250px minmax(min-content, 500px);
         justify-content: center;
     
-        #pw-avatar-wrap {
+        .page-avatar-wrap {
     
           img {
             width: 200px;
@@ -225,31 +236,31 @@
           }
         }
   
-        #quote {
+        .quote {
           max-width: 500px;
         }
       }
   
-      #pw-about-grid {
+      .page-about-grid {
         grid-template-columns: repeat(2, minmax(min-content, 360px));
   
-        #why-us {
+        .first {
           border: 1px solid transparent;
           border-right: 1px solid rgba(64, 96, 128, 0.5);
           border-bottom: 1px solid rgba(64, 96, 128, 0.5);
         }
   
-        #what-we-do {
+        .second {
           border: 1px solid transparent;
           border-bottom: 1px solid rgba(64, 96, 128, 0.5);
         }
   
-        #wp-process {
+        .third {
           border: 1px solid transparent;
           border-right: 1px solid rgba(64, 96, 128, 0.5);
         }
   
-        #administration {
+        .fourth {
           border: 1px solid transparent;
         }
       }
@@ -258,32 +269,32 @@
 }
 
 @media screen and (min-width: 1024px) {
-  #pw-content {
+  .page-content {
 
-    #pw-content-grid {
+    .page-content-grid {
       grid-template-areas: 
         'maintext form'
         'quote quote'
         'about about'
         'contact contact';
   
-      #pw-maintext {
+      .page-maintext {
         grid-area: maintext;
       }
   
-      #pw-form-wrap {
+      .page-form-wrap {
         grid-area: form;
       }
   
-      #pw-partner-grid {
+      .page-partner-grid {
         grid-area: quote;
       }
   
-      #pw-about-grid {
+      .page-about-grid {
         grid-area: about;
       }
   
-      #contact-us {
+      .contact-us {
         grid-area: contact;
       }
     }
@@ -291,11 +302,11 @@
 }
 
 @media screen and (min-width: 1200px) {
-  #pw-content {
+  .page-content {
     display: flex;
     justify-content: center;
 
-    #pw-content-grid {
+    .page-content-grid {
       max-width: 1200px;
     }
   }

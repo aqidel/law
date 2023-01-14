@@ -1,247 +1,254 @@
 @media screen and (max-width: 767px) {
   header {
-    position: absolute;
-    top: 0;
-    right: 0;
-    left: 0;
     display: flex;
     justify-content: end;
-    padding: 40px;
-  }
-
-  #burger-wrap {
-    position: relative;
-    width: 22px;
-    height: 20px;
-    z-index: 2;
-    cursor: pointer;
-  }
-
-  #burger-wrap > span {
-    position: absolute;
-    width: 22px;
-    height: 2px;
-    background-color: #ffffff;
-    transition: all 0.25s ease-in-out;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 10px;
-  }
-
-  .upper-line {
-    left: 0;
-  }
-
-  .upper-line-active {
-    transform: translateY(10px) translateY(-50%) rotate(-45deg);
-  }
-
-  .mid-line {
-    margin: 9px 0;
-    top: 0;
-    left: 0;
-  }
-
-  .mid-line-active {
-    opacity: 0;
-  }
-
-  .down-line {
-    left: 0;
-    bottom: 0;
-  }
-
-  .down-line-active {
-    transform: translateY(-10px) translateY(50%) rotate(45deg);
-  }
-
-  nav {
-    display: none;
-  }
-
-  .nav-mobile {
-    display: block;
     position: absolute;
     top: 0;
     right: 0;
-    width: 100%;
-    min-height: 100vh;
-    padding: 80px 50px 0;
-    box-sizing: border-box;
-    background-color: #1f2d3d;
-    z-index: 1;
-  }
+    left: 0;
+    padding: 40px;
 
-  .sub-menu {
-    display: none;
-  }
+    #burger-wrap {
+      position: relative;
+      width: 22px;
+      height: 20px;
+      z-index: 2;
+      cursor: pointer;
 
-  nav a, .sub-menu > a {
-    display: block;
-    font-family: Source Serif Pro, sans-serif;
-    font-size: 20px;
-    line-height: 60px;
-    text-decoration: none;
-    text-align: end;
-    color: #ffffff;
-  }
+      span {
+        position: absolute;
+        width: 22px;
+        height: 2px;
+        background-color: #ffffff;
+        transition: all 0.25s ease-in-out;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 10px;
+      }
 
-  .sub-menu > a {
-    padding-right: 30px;
-  }
+      .upper-line {
+        left: 0;
+      }
+    
+      .upper-line-active {
+        transform: translateY(10px) translateY(-50%) rotate(-45deg);
+      }
+    
+      .mid-line {
+        margin: 9px 0;
+        top: 0;
+        left: 0;
+      }
+    
+      .mid-line-active {
+        opacity: 0;
+      }
+    
+      .down-line {
+        left: 0;
+        bottom: 0;
+      }
+    
+      .down-line-active {
+        transform: translateY(-10px) translateY(50%) rotate(45deg);
+      }
+    }
 
-  nav a:hover, .sub-menu > a:hover {
-    color: #ab9791;
-  }
+    .nav-mobile {
+      display: block;
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 100%;
+      min-height: 100vh;
+      padding: 80px 50px 0;
+      box-sizing: border-box;
+      background-color: #1f2d3d;
+      z-index: 1;
+    }
 
-  #nav-to-home, #nav-to-contacts {
-    padding-right: 30px;
-  }
+    nav {
+      display: none;
 
-  .nav-link-wrap {
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    flex-wrap: wrap;
-  }
+      .nav-link-wrap {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        flex-wrap: wrap;
 
-  #nav-practice-checkbox, #nav-about-checkbox {
-    display: none;
-  }
+        .sub-menu {
+          display: none;
 
-  .nav-link-wrap svg {
-    width: 20px;
-    height: 20px;
-    padding-left: 10px;
-    vertical-align: middle;
-    fill: #ffffff;
-  }
+          a {
+            padding-right: 30px;
+          }
 
-  .nav-link-wrap svg:hover {
-    cursor: pointer;
-  }
+          a:hover {
+            color: #ab9791;
+          }
+        }
 
-  #nav-practice-checkbox:checked + label > svg,
-  #nav-about-checkbox:checked + label > svg
-  {
-    width: 20px;
-    height: 20px;
-    padding-right: 10px;
-    padding-left: 0;
-    vertical-align: middle;
-    transform: rotate(180deg);
-    fill: #ab9791;
-  }
+        svg {
+          width: 20px;
+          height: 20px;
+          padding-left: 10px;
+          vertical-align: middle;
+          fill: #ffffff;
+        }
 
-  #nav-practice-checkbox:checked ~ .sub-menu,
-  #nav-about-checkbox:checked ~ .sub-menu
-  {
-    display: block;
-    width: 100%;
+        svg:hover {
+          cursor: pointer;
+        }
+      }
+
+      a {
+        display: block;
+        font-family: Source Serif Pro, sans-serif;
+        font-size: 20px;
+        line-height: 60px;
+        text-decoration: none;
+        text-align: end;
+        color: #ffffff;
+      }
+
+      a:hover {
+        color: #ab9791;
+      }
+
+      #nav-to-home, #nav-to-contacts {
+        padding-right: 30px;
+      }
+
+      #nav-practice-checkbox, #nav-about-checkbox {
+        display: none;
+      }
+
+      #nav-practice-checkbox:checked + label > svg,
+      #nav-about-checkbox:checked + label > svg
+      {
+        width: 20px;
+        height: 20px;
+        padding-right: 10px;
+        padding-left: 0;
+        vertical-align: middle;
+        transform: rotate(180deg);
+        fill: #ab9791;
+      }
+
+      #nav-practice-checkbox:checked ~ .sub-menu,
+      #nav-about-checkbox:checked ~ .sub-menu
+      {
+        display: block;
+        width: 100%;
+      }
+    }
   }
 }
 
 @media screen and (min-width: 768px) {
-  #burger-wrap, #burger-checkbox {
-    display: none;
-  }
-
   header {
     position: absolute;
     top: 0;
     right: 0;
     left: 0;
     z-index: 1;
-  }
 
-  nav {
-    display: flex;
-    justify-content: end;
-    align-items: center;
-    column-gap: 40px;
-    padding: 30px 20px;
-    box-sizing: border-box;
-  }
+    #burger-wrap, #burger-checkbox {
+      display: none;
+    }
 
-  nav a {
-    font-family: Source Serif Pro, sans-serif;
-    font-size: 16px;
-    line-height: 38px;
-    text-decoration: none;
-    color: #ffffff;
-  }
+    nav {
+      display: flex;
+      justify-content: end;
+      align-items: center;
+      column-gap: 40px;
+      padding: 30px 20px;
+      box-sizing: border-box;
 
-  #nav-to-home:hover {
-    color: #ab9791;
-  }
+      a {
+        font-family: Source Serif Pro, sans-serif;
+        font-size: 16px;
+        line-height: 38px;
+        text-decoration: none;
+        color: #ffffff;
+      }
 
-  .nav-link-wrap {
-    display: flex;
-    align-items: center;
-    position: relative;
-  }
+      #nav-to-home:hover {
+        color: #ab9791;
+      }
 
-  .sub-menu {
-    display: none;
-  }
+      .nav-link-wrap {
+        display: flex;
+        align-items: center;
+        position: relative;
 
-  #nav-practice-checkbox, #nav-about-checkbox {
-    display: none;
-  }
+        .sub-menu {
+          display: none;
 
-  .nav-link-wrap:hover > .sub-menu, .nav-link-wrap > .sub-menu:hover {
-    display: flex;
-    flex-direction: column;
-    position: absolute;
-    top: 38px;
-    right: 0;
-    width: 200px;
-    box-sizing: border-box;
-    background-color: #1f2d3d;
-  }
+          a {
+            padding: 18px 24px;
+            font-family: Source Serif Pro, sans-serif;
+            font-size: 19px;
+            line-height: normal;
+            text-decoration: none;
+            color: #ffffff;
+          }
 
-  .nav-link-wrap svg {
-    width: 16px;
-    height: 16px;
-    padding-left: 10px;
-    vertical-align: middle;
-    fill: #ffffff;
-  }
+          a:hover {
+            background-color: #406080;
+          }
+        }
 
-  .nav-link-wrap:hover svg {
-    fill: #ab9791;
-    cursor: pointer;
-  }
+        svg {
+          width: 16px;
+          height: 16px;
+          padding-left: 10px;
+          vertical-align: middle;
+          fill: #ffffff;
+        }
 
-  .nav-link-wrap:hover > a {
-    color: #ab9791;
-  }
+        #nav-to-contacts {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          border: 2px solid #ab9791;
+          padding: 0 16px;
+          transition: all 0.4s ease-in-out;
+          line-height: 38px;
+        }
 
-  .sub-menu a {
-    padding: 18px 24px;
-    font-family: Source Serif Pro, sans-serif;
-    font-size: 19px;
-    line-height: normal;
-    text-decoration: none;
-    color: #ffffff;
-  }
+        #nav-to-contacts:hover {
+          border: 2px solid #b08b80;
+          transform: translate3d(0, -4px, 0);
+        }
+      }
 
-  .sub-menu a:hover {
-    background-color: #406080;
-  }
+      .nav-link-wrap:hover {
 
-  #nav-to-contacts {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border: 2px solid #ab9791;
-    padding: 0 16px;
-    transition: all 0.4s ease-in-out;
-    line-height: 38px;
-  }
+        svg {
+          fill: #ab9791;
+          cursor: pointer;
+        }
+      }
 
-  #nav-to-contacts:hover {
-    border: 2px solid #b08b80;
-    transform: translate3d(0, -4px, 0);
+      .nav-link-wrap:hover > a {
+        color: #ab9791;
+      }
+
+      .nav-link-wrap:hover > .sub-menu, .nav-link-wrap > .sub-menu:hover {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 38px;
+        right: 0;
+        width: 200px;
+        box-sizing: border-box;
+        background-color: #1f2d3d;
+      }
+
+      #nav-practice-checkbox, #nav-about-checkbox {
+        display: none;
+      }
+    }
   }
 }
 
@@ -249,28 +256,34 @@
   header {
     display: flex;
     justify-content: center;
-  }
 
-  nav {
-    width: 100%;
-    max-width: 1200px;
-  }
+    nav {
+      width: 100%;
+      max-width: 1200px;
 
-  nav a {
-    font-size: 16px;
-    line-height: 38px;
-  }
+      a {
+        font-size: 16px;
+        line-height: 38px;
+      }
 
-  .nav-link-wrap:hover > .sub-menu, .nav-link-wrap > .sub-menu:hover {
-    top: 38px;
-  }
+      .nav-link-wrap {
 
-  .nav-link-wrap svg {
-    width: 16px;
-    height: 16px;
-  }
+        svg {
+          width: 16px;
+          height: 16px;
+        }
 
-  .sub-menu a {
-    font-size: 15px;
+        .sub-menu {
+
+          a {
+            font-size: 15px;
+          }
+        }
+      }
+
+      .nav-link-wrap:hover > .sub-menu, .nav-link-wrap > .sub-menu:hover {
+        top: 38px;
+      }
+    }
   }
 }

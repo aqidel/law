@@ -1,35 +1,34 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
 export default function Header() {
 
-  let scrollBlocked = false;
+  const [state, setState] = useState(false);
 
-  function scrollBlock() {
-    scrollBlocked = !scrollBlocked;
-    if (scrollBlocked) {
+  function navigationHandler() {
+    if (!state) {
       document.getElementById('root').style.cssText = 'height: 100vh;overflow-y: hidden';
-    } else {
+      setState(!state);
+    } 
+    else {
       document.getElementById('root').style.cssText = null;
+      setState(!state);
     }
   }
 
   return (
     <header>
-      <input id='burger-checkbox' type='checkbox' onChange={() => scrollBlock()}/>
-      <label htmlFor='burger-checkbox'>
-        <div id='burger-wrap'>
-          <span id='upper-line'/>
-          <span id='mid-line'/>
-          <span id='down-line'/>
-        </div>
-      </label>
-      <nav id='menu-wrap'>
-        <Link id='nav-to-home' to='/'>
+      <div id='burger-wrap' onClick={() => navigationHandler()}>
+        <span className={'upper-line' + (state ? ' upper-line-active' : '')}/>
+        <span className={'mid-line' + (state ? ' mid-line-active' : '')}/>
+        <span className={'down-line' + (state ? ' down-line-active' : '')}/>
+      </div>
+      <nav className={state ? 'nav-mobile' : null}>
+        <Link id='nav-to-home' to='/' onClick={() => state ? navigationHandler() : null}>
           <span>На главную</span>
         </Link>
         <div className='nav-link-wrap'>
-          <Link to='/practice'>
+          <Link to='/practice' onClick={() => state ? navigationHandler() : null}>
             <span>Практика</span>
           </Link>
           <input id='nav-practice-checkbox' type='checkbox'/>
@@ -39,25 +38,25 @@ export default function Header() {
             </svg>
           </label>
           <div className='sub-menu'>
-            <Link className='nav-link-no-sub' to='/property'>
+            <Link className='nav-link-no-sub' to='/property' onClick={() => state ? navigationHandler() : null}>
               <span>Недвижимость на Кипре</span>
             </Link>
-            <Link className='nav-link-no-sub' to='/probate-wills'>
+            <Link className='nav-link-no-sub' to='/probate-wills' onClick={() => state ? navigationHandler() : null}>
               <span>Наследство и завещания</span>
             </Link>
-            <Link className='nav-link-no-sub' to='/immigration'>
+            <Link className='nav-link-no-sub' to='/immigration' onClick={() => state ? navigationHandler() : null}>
               <span>Иммиграция на Кипр</span>
             </Link>
-            <Link className='nav-link-no-sub' to='/corporate'>
+            <Link className='nav-link-no-sub' to='/corporate' onClick={() => state ? navigationHandler() : null}>
               <span>Корпоративное право</span>
             </Link>
-            <Link className='nav-link-no-sub' to='/litigation'>
+            <Link className='nav-link-no-sub' to='/litigation' onClick={() => state ? navigationHandler() : null}>
               <span>Судебные споры</span>
             </Link>
           </div>
         </div>
         <div className='nav-link-wrap'>
-          <Link to='/about'>
+          <Link to='/about' onClick={() => state ? navigationHandler() : null}>
             <span>О нас</span>
           </Link>
           <input id='nav-about-checkbox' type='checkbox'/>
@@ -67,15 +66,15 @@ export default function Header() {
             </svg>
           </label>
           <div className='sub-menu'>
-            <Link className='nav-link-no-sub' to='/social-responsibility'>
+            <Link className='nav-link-no-sub' to='/social-responsibility' onClick={() => state ? navigationHandler() : null}>
               <span>Социальная ответственность</span>
             </Link>
-            <Link className='nav-link-no-sub' to='/careers'>
+            <Link className='nav-link-no-sub' to='/careers' onClick={() => state ? navigationHandler() : null}>
               <span>Карьера</span>
             </Link>
           </div>
         </div>
-        <Link id='nav-to-contacts' to='/contact'>
+        <Link id='nav-to-contacts' to='/contact' onClick={() => state ? navigationHandler() : null}>
           <span>Контакты</span>
         </Link>
       </nav>

@@ -9,10 +9,6 @@
     padding: 40px;
   }
 
-  #burger-checkbox {
-    display: none;
-  }
-
   #burger-wrap {
     position: relative;
     width: 22px;
@@ -31,30 +27,30 @@
     font-size: 10px;
   }
 
-  #upper-line {
+  .upper-line {
     left: 0;
   }
 
-  #burger-checkbox:checked + label #upper-line {
+  .upper-line-active {
     transform: translateY(10px) translateY(-50%) rotate(-45deg);
   }
 
-  #mid-line {
+  .mid-line {
     margin: 9px 0;
     top: 0;
     left: 0;
   }
 
-  #burger-checkbox:checked + label #mid-line {
+  .mid-line-active {
     opacity: 0;
   }
 
-  #down-line {
+  .down-line {
     left: 0;
     bottom: 0;
   }
 
-  #burger-checkbox:checked + label #down-line {
+  .down-line-active {
     transform: translateY(-10px) translateY(50%) rotate(45deg);
   }
 
@@ -62,7 +58,7 @@
     display: none;
   }
 
-  #burger-checkbox:checked ~ nav {
+  .nav-mobile {
     display: block;
     position: absolute;
     top: 0;

@@ -1,12 +1,12 @@
-#property-bg-wrap {
+#pw-bg-wrap {
   box-sizing: border-box;
   background-color: rgba(31, 45, 61, 0.7);
-  background-image: linear-gradient(0deg, rgba(31, 45, 61, 0.7), rgba(31, 45, 61, 0.7)), url('../img/property/villa_scaled.webp');
+  background-image: linear-gradient(0deg, rgba(31, 45, 61, 0.7), rgba(31, 45, 61, 0.7)), url('../img/probate-wills/parent.webp');
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
 
-  #property-header-wrap {
+  #pw-header-wrap {
     padding: 160px 20px;
 
     h1 {
@@ -22,13 +22,13 @@
   }
 }
 
-#property-content {
+#pw-content {
 
-  #property-content-grid {
+  #pw-content-grid {
     display: grid;
     padding: 100px 20px 20px;
   
-    #property-maintext {
+    #pw-maintext {
       padding: 0 0 60px;
   
       h2 {
@@ -75,18 +75,18 @@
         margin-bottom: 30px;
       }
     }
-  
-    #property-form-wrap {
+
+    #pw-form-wrap {
       display: flex;
       justify-content: center;
       padding-bottom: 60px;
     }
-  
-    #property-partner-grid {
+
+    #pw-partner-grid {
       display: grid;
       padding-bottom: 80px;
   
-      #property-avatar-wrap {
+      #pw-avatar-wrap {
         display: flex;
         justify-content: center;
         padding-bottom: 40px;
@@ -126,12 +126,12 @@
         }
       }
     }
-  
-    #property-about-grid {
+
+    #pw-about-grid {
       display: grid;
       justify-content: center;
   
-      #why-us, #how-it, #purchase, #sale {
+      #why-us, #what-we-do, #wp-process, #administration {
         padding: 20px 20px 40px;
         box-sizing: border-box;
   
@@ -171,7 +171,7 @@
         }
       }
     }
-  
+
     #contact-us {
       display: flex;
       flex-direction: column;
@@ -209,15 +209,15 @@
 }
 
 @media screen and (min-width: 768px) {
-  #property-content {
+  #pw-content {
 
-    #property-content-grid {
+    #pw-content-grid {
 
-      #property-partner-grid {
+      #pw-partner-grid {
         grid-template-columns: 250px minmax(min-content, 500px);
         justify-content: center;
     
-        #property-avatar-wrap {
+        #pw-avatar-wrap {
     
           img {
             width: 200px;
@@ -230,7 +230,7 @@
         }
       }
   
-      #property-about-grid {
+      #pw-about-grid {
         grid-template-columns: repeat(2, minmax(min-content, 360px));
   
         #why-us {
@@ -239,17 +239,17 @@
           border-bottom: 1px solid rgba(64, 96, 128, 0.5);
         }
   
-        #how-it {
+        #what-we-do {
           border: 1px solid transparent;
           border-bottom: 1px solid rgba(64, 96, 128, 0.5);
         }
   
-        #purchase {
+        #wp-process {
           border: 1px solid transparent;
           border-right: 1px solid rgba(64, 96, 128, 0.5);
         }
   
-        #sale {
+        #administration {
           border: 1px solid transparent;
         }
       }
@@ -258,28 +258,28 @@
 }
 
 @media screen and (min-width: 1024px) {
-  #property-content {
+  #pw-content {
 
-    #property-content-grid {
+    #pw-content-grid {
       grid-template-areas: 
         'maintext form'
         'quote quote'
         'about about'
         'contact contact';
   
-      #property-maintext {
+      #pw-maintext {
         grid-area: maintext;
       }
   
-      #property-form-wrap {
+      #pw-form-wrap {
         grid-area: form;
       }
   
-      #property-partner-grid {
+      #pw-partner-grid {
         grid-area: quote;
       }
   
-      #property-about-grid {
+      #pw-about-grid {
         grid-area: about;
       }
   
@@ -291,11 +291,11 @@
 }
 
 @media screen and (min-width: 1200px) {
-  #property-content {
+  #pw-content {
     display: flex;
     justify-content: center;
 
-    #property-content-grid {
+    #pw-content-grid {
       max-width: 1200px;
     }
   }

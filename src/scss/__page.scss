@@ -41,7 +41,15 @@
   background-image: linear-gradient(0deg, rgba(31, 45, 61, 0.7), rgba(31, 45, 61, 0.7)), url('../img/litigation/litigation.webp');
 }
 
+#about-bg {
+  background-image: linear-gradient(0deg, rgba(31, 45, 61, 0.7), rgba(31, 45, 61, 0.7)), url('../img/practice/office.webp');
+}
+
 .page-content {
+
+  #about-grid {
+    display: block;
+  }
 
   .page-content-grid {
     display: grid;
@@ -88,10 +96,37 @@
         color: #1f2d3d;
       }
   
-      img {
+      > img {
         width: 100%;
         height: auto;
         margin-bottom: 30px;
+      }
+
+      .our-people {
+
+        div {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+
+          > img {
+            width: 220px;
+            height: auto;
+          }
+
+          > a {
+            margin: 10px 0 0 0;
+            font-family: Source Serif Pro, sans-serif;
+            font-size: 18px;
+            line-height: 30px;
+            text-decoration: none;
+            color: #1f2d3d;
+          }
+
+          > p {
+            margin: 0 0 10px 0;
+          }
+        }
       }
     }
 
@@ -231,6 +266,21 @@
   .page-content {
 
     .page-content-grid {
+
+      .page-maintext {
+
+        .our-people {
+          display: flex;
+          justify-content: center;
+          
+          .our-people-flex {
+            flex-direction: row;
+            justify-content: space-between;
+            min-width: 728px;
+            max-width: 750px;
+          }
+        }
+      }
 
       .page-partner-grid {
         grid-template-columns: 250px minmax(min-content, 500px);

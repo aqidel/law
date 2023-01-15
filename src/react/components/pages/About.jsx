@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import demidov from '../../../img/home/lawyers/demidov-aleksandr.webp';
 import pavlov from '../../../img/home/lawyers/pavlov-andriy.webp';
 import vorontsova from '../../../img/home/lawyers/vorontsova-ekaterina.webp';
@@ -115,18 +114,27 @@ export default function About() {
               <div className='our-people-flex'>
                 <div>
                   <img src={demidov} alt='img'/>
-                  <Link to='/about/demidov'>Александр Демидов</Link>
-                  <p>Управляющий партнер</p>
+                  <p>
+                    Александр Демидов
+                    <br/>
+                    <em>Управляющий партнер</em>
+                  </p>
                 </div>
                 <div>
                   <img src={pavlov} alt='img'/>
-                  <Link to='/about/pavlov'>Андрей Павлов</Link>
-                  <p>Партнер</p>
+                  <p>
+                    Андрей Павлов
+                    <br/>
+                    <em>Партнер</em>
+                  </p>
                 </div>
                 <div>
                   <img src={vorontsova} alt='img'/>
-                  <Link to='/about/vorontsova'>Екатерина Воронцова</Link>
-                  <p>Партнер</p>
+                  <p>
+                    Екатерина Воронцова
+                    <br/>
+                    <em>Партнер</em>
+                  </p>
                 </div>
               </div>
             </div>

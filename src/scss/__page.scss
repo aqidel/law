@@ -41,13 +41,21 @@
   background-image: linear-gradient(0deg, rgba(31, 45, 61, 0.7), rgba(31, 45, 61, 0.7)), url('../img/litigation/litigation.webp');
 }
 
-#about-bg {
+#about-bg, #contact-bg {
   background-image: linear-gradient(0deg, rgba(31, 45, 61, 0.7), rgba(31, 45, 61, 0.7)), url('../img/practice/office.webp');
+}
+
+#sr-bg {
+  background-image: linear-gradient(0deg, rgba(31, 45, 61, 0.7), rgba(31, 45, 61, 0.7)), url('../img/social-responsibility/social_responsibility.webp');
+}
+
+#careers-bg {
+  background-image: linear-gradient(0deg, rgba(31, 45, 61, 0.7), rgba(31, 45, 61, 0.7)), url('../img/careers/careers.webp');
 }
 
 .page-content {
 
-  #about-grid {
+  #about-grid, #sr-grid, #careers-grid {
     display: block;
   }
 
@@ -88,18 +96,37 @@
         color: #1f2d3d;
       }
   
-      p {
+      p, ul {
         margin: 0 0 25px;
         font-family: Source Serif Pro, sans-serif;
         font-size: 18px;
         line-height: 30px;
         color: #1f2d3d;
       }
-  
+
       > img {
         width: 100%;
         height: auto;
         margin-bottom: 30px;
+      }
+
+      .about-svg-wrap {
+
+        svg {
+          display: inline-block;
+          width: 15px;
+          height: 15px;
+          margin-right: 7px;
+          vertical-align: middle;
+          fill: #406080;
+        }
+
+        span {
+          font-family: Source Serif Pro, sans-serif;
+          font-size: 17px;
+          line-height: 29px;
+          color: #406080;
+        }
       }
 
       .our-people {
@@ -114,17 +141,9 @@
             height: auto;
           }
 
-          > a {
-            margin: 10px 0 0 0;
-            font-family: Source Serif Pro, sans-serif;
-            font-size: 18px;
-            line-height: 30px;
-            text-decoration: none;
-            color: #1f2d3d;
-          }
-
           > p {
-            margin: 0 0 10px 0;
+            margin: 10px 0;
+            text-align: center;
           }
         }
       }
@@ -349,7 +368,8 @@
         'quote quote'
         'about about'
         'contact contact';
-  
+      column-gap: 20px;
+
       .page-maintext {
         grid-area: maintext;
       }
@@ -370,6 +390,11 @@
         grid-area: contact;
       }
     }
+
+    #contact-grid {
+      grid-template-areas: 'maintext form';
+      column-gap: 20px;
+    }
   }
 }
 
@@ -380,6 +405,7 @@
 
     .page-content-grid {
       max-width: 1200px;
+      box-sizing: border-box;
     }
   }
 }

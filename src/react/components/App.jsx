@@ -10,9 +10,6 @@ import Corporate from './pages/Corporate';
 import Litigation from './pages/Litigation';
 import Immigration from './pages/Immigration';
 import About from './pages/About';
-import Demidov from './pages/Demidov';
-import Pavlov from './pages/Pavlov';
-import Vorontsova from './pages/Vorontsova';
 import SocialResponsibility from './pages/SocialResponsibility';
 import Careers from './pages/Careers';
 import Contact from './pages/Contact';
@@ -31,9 +28,6 @@ export default function App() {
         <Route path='/litigation' element={<Litigation/>}/>
         <Route path='/immigration' element={<Immigration/>} />
         <Route path='/about' element={<About/>}/>
-        <Route path='/about/demidov' element={<Demidov/>}/>
-        <Route path='/about/pavlov' element={<Pavlov/>}/>
-        <Route path='/about/vorontsova' element={<Vorontsova/>}/>
         <Route path='/social-responsibility' element={<SocialResponsibility/>}/>
         <Route path='/careers' element={<Careers/>}/>
         <Route path='/contact' element={<Contact/>}/>

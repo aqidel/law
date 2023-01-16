@@ -11,7 +11,7 @@ export default function Footer() {
         </div>
         <div id='footer-grid'>
           <div className='footer-grid-element'>
-            <span>Pavlov & Demidov LLC</span>
+            <span>Demidov & Pavlov LLC</span>
           </div>
           <div className='footer-grid-element'>
             <div>
@@ -76,7 +76,7 @@ export default function Footer() {
         </div>
       </div>
       <div id='copyright'>
-        © 2023 Pavlov & Demidov LLC | Created by Aqidel
+        © 2023 Demidov & Pavlov LLC | Created by Aqidel
       </div>
     </footer>
   );

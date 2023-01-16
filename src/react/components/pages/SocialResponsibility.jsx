@@ -3,7 +3,7 @@ import React from 'react';
 export default function SocialResponsibility() {
   return (
     <React.Fragment>
-      <div className='page-bg-wrap'>
+      <div className='page-bg-wrap' id='sr-bg'>
         <div className='page-header-wrap'>
           <h1>Общественная ответственность</h1>
         </div>
